@@ -117,7 +117,7 @@
     <div style="display: flex; flex-direction: row">
       <div class="container">
         <div class="main">
-          <h1 class="heading">Confession</h1>
+          <h1 class="heading">Confession 1</h1>
           <div class="para">
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
@@ -179,101 +179,246 @@
             </section>
           </div>
         </div>
-        <div class="others">
-          <br /><br /><br /><br /><br />
-          <h2 class="heading">Related Confessions</h2>
-          <div class="para">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
-              aliquid soluta dolores, ea reiciendis recusandae tempora iure
-              commodi vel tempore eos ut repellat, praesentium nemo sapiente
-              veritatis reprehenderit alias quibusdam quae esse in nobis dolorem
-              eligendi? Repudiandae excepturi sunt expedita nihil ab deserunt.
-              <br />
-              <span class="more" style="margin: 10px"
-                ><strong>More</strong><span> ></span></span
-              >
-            </p>
+        <br /><br /><br /><br /><br />
+        <h1 class="heading">Confession 2</h1>
+        <div class="para">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
+            aliquid soluta dolores, ea reiciendis recusandae tempora iure
+            commodi vel tempore eos ut repellat, praesentium nemo sapiente
+            veritatis reprehenderit alias quibusdam quae esse in nobis dolorem
+            eligendi? Repudiandae excepturi sunt expedita nihil ab deserunt, non
+            exercitationem ullam delectus ipsam doloremque porro ea placeat iste
+            soluta necessitatibus similique aperiam illo sed, natus
+            reprehenderit quas tempore corporis! Dolorem, ut minus ipsa fugiat
+            unde vel ea repudiandae reprehenderit facilis a hic harum et
+            possimus iure nostrum iusto quaerat. Officia asperiores obcaecati
+            expedita necessitatibus delectus, laborum, dolorum aut harum et sit
+            quidem alias illo?
             <br />
-            <div class="icons">
-              <i class="fas fa-eye"></i>
-              <span class="views" style="margin: 10px"
-                ><strong>600</strong><span> Views</span></span
-              >
-              <i class="fas fa-thumbs-up"></i>
-              <span class="likes" style="margin: 10px"
-                ><strong>3</strong><span> Likes</span></span
-              >
-              <i class="fas fa-comment"></i>
-              <span class="comments-number" style="margin: 10px"
-                ><strong>25</strong><span> Comments</span></span
-              >
-            </div>
+            <span class="more" style="margin: 10px"
+              ><strong>More</strong><span> ></span></span
+            >
+          </p>
+          <br />
+          <div class="icons">
+            <i class="fas fa-eye"></i>
+            <span class="views" style="margin: 10px"
+              ><strong>600</strong><span> Views</span></span
+            >
+            <i class="fas fa-thumbs-up"></i>
+            <span class="likes" style="margin: 10px"
+              ><strong>3</strong><span> Likes</span></span
+            >
+            <i class="fas fa-comment"></i>
+            <span class="comments-number" style="margin: 10px"
+              ><strong>25</strong><span> Comments</span></span
+            >
           </div>
-          <div class="para">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
-              aliquid soluta dolores, ea reiciendis recusandae tempora iure
-              commodi vel tempore eos ut repellat, praesentium nemo sapiente
-              veritatis reprehenderit alias quibusdam quae esse in nobis dolorem
-              eligendi? Repudiandae excepturi sunt expedita nihil ab deserunt.
-              <br />
-              <span class="more" style="margin: 10px"
-                ><strong>More</strong><span> ></span></span
-              >
-            </p>
-            <br />
-            <div class="icons">
-              <i class="fas fa-eye"></i>
-              <span class="views" style="margin: 10px"
-                ><strong>463</strong><span> Views</span></span
-              >
-              <i class="fas fa-thumbs-up"></i>
-              <span class="likes" style="margin: 10px"
-                ><strong>4</strong><span> Likes</span></span
-              >
-              <i class="fas fa-comment"></i>
-              <span class="comments-number" style="margin: 10px"
-                ><strong>15</strong><span> Comments</span></span
-              >
+          <section id="app">
+            <div class="comment-container">
+              <div class="row">
+                <div class="col-6">
+                  <div class="comment">
+                    <p v-for="items in item" v-text="items"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <textarea
+                    type="text"
+                    class="input"
+                    placeholder="Write a comment"
+                    v-model="newItem"
+                    @keyup.enter="addItem()"
+                  ></textarea>
+                  <button
+                    v-on:click="addItem()"
+                    class="primaryContained float-right"
+                    type="submit"
+                  >
+                    Add Comment
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="para">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
-              aliquid soluta dolores, ea reiciendis recusandae tempora iure
-              commodi vel tempore eos ut repellat, praesentium nemo sapiente
-              veritatis reprehenderit alias quibusdam quae esse in nobis dolorem
-              eligendi? Repudiandae excepturi sunt expedita nihil ab deserunt.
-              <br />
-              <span class="more" style="margin: 10px"
-                ><strong>More</strong><span> ></span></span
-              >
-            </p>
-            <br />
-            <div class="icons">
-              <i class="fas fa-eye"></i>
-              <span class="views" style="margin: 10px"
-                ><strong>240</strong><span> Views</span></span
-              >
-              <i class="fas fa-thumbs-up"></i>
-              <span class="likes" style="margin: 10px"
-                ><strong>6</strong><span> Likes</span></span
-              >
-              <i class="fas fa-comment"></i>
-              <span class="comments-number" style="margin: 10px"
-                ><strong>7</strong><span> Comments</span></span
-              >
-            </div>
-          </div>
+          </section>
         </div>
+        <br /><br /><br /><br /><br />
+        <h1 class="heading">Confession 3</h1>
+        <div class="para">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
+            aliquid soluta dolores, ea reiciendis recusandae tempora iure
+            commodi vel tempore eos ut repellat, praesentium nemo sapiente
+            veritatis reprehenderit alias quibusdam quae esse in nobis dolorem
+            eligendi? Repudiandae excepturi sunt expedita nihil ab deserunt, non
+            exercitationem ullam delectus ipsam doloremque porro ea placeat iste
+            soluta necessitatibus similique aperiam illo sed, natus
+            reprehenderit quas tempore corporis! Dolorem, ut minus ipsa fugiat
+            unde vel ea repudiandae reprehenderit facilis a hic harum et
+            possimus iure nostrum iusto quaerat. Officia asperiores obcaecati
+            expedita necessitatibus delectus, laborum, dolorum aut harum et sit
+            quidem alias illo?
+            <br />
+            <span class="more" style="margin: 10px"
+              ><strong>More</strong><span> ></span></span
+            >
+          </p>
+          <br />
+          <div class="icons">
+            <i class="fas fa-eye"></i>
+            <span class="views" style="margin: 10px"
+              ><strong>463</strong><span> Views</span></span
+            >
+            <i class="fas fa-thumbs-up"></i>
+            <span class="likes" style="margin: 10px"
+              ><strong>4</strong><span> Likes</span></span
+            >
+            <i class="fas fa-comment"></i>
+            <span class="comments-number" style="margin: 10px"
+              ><strong>15</strong><span> Comments</span></span
+            >
+          </div>
+          <section id="app">
+            <div class="comment-container">
+              <div class="row">
+                <div class="col-6">
+                  <div class="comment">
+                    <p v-for="items in item" v-text="items"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <textarea
+                    type="text"
+                    class="input"
+                    placeholder="Write a comment"
+                    v-model="newItem"
+                    @keyup.enter="addItem()"
+                  ></textarea>
+                  <button
+                    v-on:click="addItem()"
+                    class="primaryContained float-right"
+                    type="submit"
+                  >
+                    Add Comment
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <br /><br /><br /><br /><br />
+        <h1 class="heading">Confession 4</h1>
+        <div class="para">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
+            aliquid soluta dolores, ea reiciendis recusandae tempora iure
+            commodi vel tempore eos ut repellat, praesentium nemo sapiente
+            veritatis reprehenderit alias quibusdam quae esse in nobis dolorem
+            eligendi? Repudiandae excepturi sunt expedita nihil ab deserunt, non
+            exercitationem ullam delectus ipsam doloremque porro ea placeat iste
+            soluta necessitatibus similique aperiam illo sed, natus
+            reprehenderit quas tempore corporis! Dolorem, ut minus ipsa fugiat
+            unde vel ea repudiandae reprehenderit facilis a hic harum et
+            possimus iure nostrum iusto quaerat. Officia asperiores obcaecati
+            expedita necessitatibus delectus, laborum, dolorum aut harum et sit
+            quidem alias illo?
+            <br />
+            <span class="more" style="margin: 10px"
+              ><strong>More</strong><span> ></span></span
+            >
+          </p>
+          <br />
+          <div class="icons">
+            <i class="fas fa-eye"></i>
+            <span class="views" style="margin: 10px"
+              ><strong>240</strong><span> Views</span></span
+            >
+            <i class="fas fa-thumbs-up"></i>
+            <span class="likes" style="margin: 10px"
+              ><strong>6</strong><span> Likes</span></span
+            >
+            <i class="fas fa-comment"></i>
+            <span class="comments-number" style="margin: 10px"
+              ><strong>7</strong><span> Comments</span></span
+            >
+          </div>
+          <section id="app">
+            <div class="comment-container">
+              <div class="row">
+                <div class="col-6">
+                  <div class="comment">
+                    <p v-for="items in item" v-text="items"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <textarea
+                    type="text"
+                    class="input"
+                    placeholder="Write a comment"
+                    v-model="newItem"
+                    @keyup.enter="addItem()"
+                  ></textarea>
+                  <button
+                    v-on:click="addItem()"
+                    class="primaryContained float-right"
+                    type="submit"
+                  >
+                    Add Comment
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <br /><br /><br /><br /><br />
+        <h2 class="heading">Write your confession</h2>
+        <section id="confess">
+          <div
+            class="confession-container"
+            style="padding-left: 40px; padding-right: 40px"
+          >
+            <div class="row">
+              <div class="col-6">
+                <div class="comment">
+                  <p v-for="items in item" v-text="items"></p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <textarea
+                  type="text"
+                  class="input"
+                  placeholder="Write your confession"
+                  v-model="newItem"
+                  @keyup.enter="addItem()"
+                  rows="10"
+                ></textarea>
+                <button
+                  v-on:click="addItem()"
+                  class="primaryContained float-right"
+                  type="submit"
+                >
+                  Add Confession
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
       <div style="padding-right: 20px; position: sticky">
         <div class="window">
           <div class="overlay"></div>
           <div class="box header">
-            <img src="./assets/user.png" alt="">
+            <img src="./assets/user.png" alt="" />
             <h2>UMANG BARANWAL</h2>
             <h4>India</h4>
           </div>
