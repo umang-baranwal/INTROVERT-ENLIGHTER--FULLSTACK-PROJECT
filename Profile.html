@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        max-width: 100%;
+        background-color: dark rgb(195, 195, 221);
+        background-size: 20px 20px;
+      }
+
+      .form {
+        max-width: calc(100vw - 40px);
+        width: 500px;
+        height: auto;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 8px;
+        box-shadow: 0 0 40px -10px #fff;
+        margin: 3% auto;
+        padding: 20px 30px;
+        box-sizing: border-box;
+        position: relative;
+        border-bottom: 5px solid #ccc;
+      }
+      form:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: #c4e17f;
+        border-radius: 5px 5px 0 0;
+        background: rgba(196, 225, 127, 1);
+      }
+
+      .form h2 {
+        margin: 18px 0;
+        padding-bottom: 10px;
+        width: 210px;
+        color: #9b1e1e;
+        font-size: 22px;
+        border-bottom: 3px solid #0f0905;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+      .form p:before {
+        /* padding: 300px; */
+        content: attr(type);
+        display: block;
+        margin: 10px 0 0;
+        font-size: 13px;
+        color: #5a5a5a;
+        float: left;
+        width: 40%;
+        transition: all 0.3s;
+      }
+      input {
+        width: 60%;
+        padding: 10px;
+        box-sizing: border-box;
+        background: none;
+        outline: none;
+        resize: none;
+        border: 0;
+        font-family: "Montserrat", sans-serif;
+        border: 2px solid #bebed2;
+        transition: all 0.3s;
+      }
+
+      .input-group .form-control:not(:first-child):not(:last-child),
+      .input-group-addon:not(:first-child):not(:last-child),
+      .input-group-btn:not(:first-child):not(:last-child) {
+        border-radius: 0 4px 4px 0;
+      }
+      button {
+        padding: 8px 12px;
+        margin: 8px 0 0;
+        font-family: "Montserrat", sans-serif;
+        border: 2px solid #78788c;
+        background: 0;
+        color: #6e5a5a;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      button:hover {
+        background: #8c7878;
+        color: #fff;
+      }
+      .tright {
+        text-align: right;
+      }
+
+      .relative {
+        position: relative;
+      }
+      .relative i.fa:before {
+        color: #444;
+        padding: 10px;
+        position: absolute;
+        left: -3px;
+        text-align: center;
+      }
+
+      .relative i.fa {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        text-align: center;
+        border-radius: 0 4px 4px 0;
+        width: 0;
+        height: 0;
+        z-index: 99;
+        border-left: 20px solid transparent;
+        border-right: 30px solid #ccc;
+        border-bottom: 34px solid #ccc;
+        transition: all 0.15s ease-in-out;
+      }
+      .relative input:focus + i.fa {
+        border-left: 20px solid transparent;
+        border-right: 30px solid #1e439b;
+        border-bottom: 34px solid #1e439b;
+      }
+      .relative input:focus + i.fa:before {
+        color: #fff;
+      }
+
+      .movebtn {
+        background-color: transparent;
+        display: inline-block;
+        width: 100px;
+        background-image: none;
+        padding: 8px 10px;
+        margin-bottom: 20px;
+        border-radius: 0;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s;
+        -webkit-transition-timing-function: cubic-bezier(0.5, 1.65, 0.37, 0.66);
+        transition-timing-function: cubic-bezier(0.5, 1.65, 0.37, 0.66);
+      }
+      .movebtnre {
+        border: 2px solid #ff5501;
+        box-shadow: inset 0 0 0 0 #ff5501;
+        color: #ff5501;
+      }
+      .movebtnsu {
+        border: 2px solid #1e439b;
+        box-shadow: inset 0 0 0 0 #1e439b;
+        color: #1e439b;
+      }
+      .movebtnre:focus,
+      .movebtnre:hover,
+      .movebtnre:active {
+        background-color: transparent;
+        color: #fff;
+        border-color: #ff5501;
+        box-shadow: inset 96px 0 0 0 #ff5501;
+      }
+      .movebtnsu:focus,
+      .movebtnsu:hover,
+      .movebtnsu:active {
+        background-color: transparent;
+        color: #fff;
+        border-color: #1e439b;
+        box-shadow: inset 96px 0 0 0 #1e439b;
+      }
+      .form h5 {
+        background-color: rgb(116, 110, 110);
+        padding: 5px;
+      }
+      /* --- Media Queries --- */
+
+      @media only screen and (max-width: 600px) {
+        p:before {
+          content: attr(type);
+          width: 100%;
+        }
+        input {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form">
+        <div class="Header">
+          <h2>User-Profile</h2>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Full Name:</label>
+          <div class="relative">
+            <br />
+            <h5>UMANG BARANWAL</h5>
+            <i class="fa fa-user"></i>
+          </div>
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <div class="relative">
+            <br />
+            <h5>umangbaranwal00@gmail.com</h5>
+            <i class="fa fa-envelope"></i>
+          </div>
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="email">Contact Number:</label>
+          <div class="relative">
+            <br />
+            <h5>7074348712</h5>
+            <i class="fa fa-phone"></i>
+          </div>
+        </div>
+        <br />
+
+        <div class="tright">
+          <a href="./EditProfile.html">Edit Profile</a>
+          <a href="./confession.html">Done</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

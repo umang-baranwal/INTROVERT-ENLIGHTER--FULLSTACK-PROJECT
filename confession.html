@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/248da48d99.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./confession.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+
+      .container {
+        display: block;
+        padding: 20px;
+        margin: 50px;
+      }
+
+      .heading {
+        padding: 10px 5px 0px 5px;
+        margin: 10px 20px;
+        color: #016ba8;
+      }
+
+      .para {
+        padding: 0px 5px 10px 5px;
+        margin: 10px 20px;
+        color: rgb(44, 43, 43);
+      }
+
+      textarea {
+        width: 100%;
+        border: solid 2px;
+      }
+
+      #submit {
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+        background-color: black;
+        color: white;
+      }
+
+      .comment-container {
+        max-width: 640px;
+        margin: 0px auto 10px auto;
+        border-radius: 8px;
+        padding: 5px 10px;
+        float: left;
+      }
+
+      .comment {
+        display: block;
+        transition: all 1s;
+      }
+      .commentClicked {
+        min-height: 0px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        padding: 5px 10px;
+      }
+
+      .container textarea {
+        width: 100%;
+        border: none;
+        background: #e8e8e8;
+        padding: 5px 10px;
+        height: 50%;
+        border-radius: 5px 5px 0px 0px;
+        border-bottom: 2px solid #016ba8;
+        transition: all 0.5s;
+        margin-top: 15px;
+      }
+
+      button.primaryContained {
+        background: #016ba8;
+        color: #fff;
+        padding: 10px 10px;
+        border: none;
+        margin-top: 0px;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+        transition: 1s all;
+        font-size: 10px;
+        border-radius: 5px;
+      }
+
+      button.primaryContained:hover {
+        background: #9201a8;
+      }
+
+      body {
+        background: #f5f3f3;
+      }
+
+      .icons i,
+      span {
+        color: #016ba8;
+      }
+
+      .others {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; flex-direction: row">
+      <div class="container">
+        <div class="main">
+          <h1 class="heading">Confession</h1>
+          <div class="para">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
+              aliquid soluta dolores, ea reiciendis recusandae tempora iure
+              commodi vel tempore eos ut repellat, praesentium nemo sapiente
+              veritatis reprehenderit alias quibusdam quae esse in nobis dolorem
+              eligendi? Repudiandae excepturi sunt expedita nihil ab deserunt,
+              non exercitationem ullam delectus ipsam doloremque porro ea
+              placeat iste soluta necessitatibus similique aperiam illo sed,
+              natus reprehenderit quas tempore corporis! Dolorem, ut minus ipsa
+              fugiat unde vel ea repudiandae reprehenderit facilis a hic harum
+              et possimus iure nostrum iusto quaerat. Officia asperiores
+              obcaecati expedita necessitatibus delectus, laborum, dolorum aut
+              harum et sit quidem alias illo?
+            </p>
+            <br />
+            <div class="icons">
+              <i class="fas fa-eye"></i>
+              <span class="views" style="margin: 10px"
+                ><strong>745</strong><span> Views</span></span
+              >
+              <i class="fas fa-thumbs-up"></i>
+              <span class="likes" style="margin: 10px"
+                ><strong>2</strong><span> Likes</span></span
+              >
+              <i class="fas fa-comment"></i>
+              <span class="comments-number" style="margin: 10px"
+                ><strong>52</strong><span> Comments</span></span
+              >
+            </div>
+            <section id="app">
+              <div class="comment-container">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="comment">
+                      <p v-for="items in item" v-text="items"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <textarea
+                      type="text"
+                      class="input"
+                      placeholder="Write a comment"
+                      v-model="newItem"
+                      @keyup.enter="addItem()"
+                    ></textarea>
+                    <button
+                      v-on:click="addItem()"
+                      class="primaryContained float-right"
+                      type="submit"
+                    >
+                      Add Comment
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="others">
+          <br /><br /><br /><br /><br />
+          <h2 class="heading">Related Confessions</h2>
+          <div class="para">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
+              aliquid soluta dolores, ea reiciendis recusandae tempora iure
+              commodi vel tempore eos ut repellat, praesentium nemo sapiente
+              veritatis reprehenderit alias quibusdam quae esse in nobis dolorem
+              eligendi? Repudiandae excepturi sunt expedita nihil ab deserunt.
+              <br />
+              <span class="more" style="margin: 10px"
+                ><strong>More</strong><span> ></span></span
+              >
+            </p>
+            <br />
+            <div class="icons">
+              <i class="fas fa-eye"></i>
+              <span class="views" style="margin: 10px"
+                ><strong>600</strong><span> Views</span></span
+              >
+              <i class="fas fa-thumbs-up"></i>
+              <span class="likes" style="margin: 10px"
+                ><strong>3</strong><span> Likes</span></span
+              >
+              <i class="fas fa-comment"></i>
+              <span class="comments-number" style="margin: 10px"
+                ><strong>25</strong><span> Comments</span></span
+              >
+            </div>
+          </div>
+          <div class="para">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
+              aliquid soluta dolores, ea reiciendis recusandae tempora iure
+              commodi vel tempore eos ut repellat, praesentium nemo sapiente
+              veritatis reprehenderit alias quibusdam quae esse in nobis dolorem
+              eligendi? Repudiandae excepturi sunt expedita nihil ab deserunt.
+              <br />
+              <span class="more" style="margin: 10px"
+                ><strong>More</strong><span> ></span></span
+              >
+            </p>
+            <br />
+            <div class="icons">
+              <i class="fas fa-eye"></i>
+              <span class="views" style="margin: 10px"
+                ><strong>463</strong><span> Views</span></span
+              >
+              <i class="fas fa-thumbs-up"></i>
+              <span class="likes" style="margin: 10px"
+                ><strong>4</strong><span> Likes</span></span
+              >
+              <i class="fas fa-comment"></i>
+              <span class="comments-number" style="margin: 10px"
+                ><strong>15</strong><span> Comments</span></span
+              >
+            </div>
+          </div>
+          <div class="para">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum est
+              aliquid soluta dolores, ea reiciendis recusandae tempora iure
+              commodi vel tempore eos ut repellat, praesentium nemo sapiente
+              veritatis reprehenderit alias quibusdam quae esse in nobis dolorem
+              eligendi? Repudiandae excepturi sunt expedita nihil ab deserunt.
+              <br />
+              <span class="more" style="margin: 10px"
+                ><strong>More</strong><span> ></span></span
+              >
+            </p>
+            <br />
+            <div class="icons">
+              <i class="fas fa-eye"></i>
+              <span class="views" style="margin: 10px"
+                ><strong>240</strong><span> Views</span></span
+              >
+              <i class="fas fa-thumbs-up"></i>
+              <span class="likes" style="margin: 10px"
+                ><strong>6</strong><span> Likes</span></span
+              >
+              <i class="fas fa-comment"></i>
+              <span class="comments-number" style="margin: 10px"
+                ><strong>7</strong><span> Comments</span></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding-right: 20px; position: sticky">
+        <div class="window">
+          <div class="overlay"></div>
+          <div class="box header">
+            <img src="https://goo.gl/DM5s4f" alt="" />
+            <h2>UMANG BARANWAL</h2>
+            <h4>India</h4>
+          </div>
+          <div class="box footer">
+            <ul>
+              <li>
+                <a href=""><span class="ion-ios-camera-outline"></span> 401</a>
+              </li>
+              <li>
+                <a href=""><span class="ion-ios-heart-outline"></span> 333K</a>
+              </li>
+              <li>
+                <a href=""><span class="ion-ios-person-outline"></span> 225M</a>
+              </li>
+            </ul>
+            <a href="./Profile.html" class="btn">Full Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
